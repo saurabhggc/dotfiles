@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Saurabh
+	email = 79586784+saurabhggc@users.noreply.github.com
+[core]
+	editor = code --wait
+	autocrlf = input
