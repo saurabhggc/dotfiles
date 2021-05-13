@@ -1,27 +1,26 @@
 set fish_greeting
 
-alias ls='exa -al --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'
-alias ll='exa -l --color=always --group-directories-first'
-alias lt='exa -aT --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+# Change exa to ls
+alias ls="exa --color=always --group-directories-first"
+alias la="ls -la"
+alias ll="ls -l"
+alias lt="ls -T"
 
-alias v='nvim'
-alias g='git'
-alias .files='git --git-dir=$HOME/.files/ --work-tree=$HOME'
-alias gss='git status -s'
-alias dev='cd ~/Documents/Code'
-alias efsh='nvim ~/.config/fish/config.fish'
-alias evim='nvim ~/.config/nvim/init.vim'
+# Useful aliases
+alias v="nvim"
+alias dev="cd $HOME/Documents/Code"
+alias efsh="nvim $HOME/.config/fish/config.fish"
+alias evim="nvim $HOME/.config/nvim/init.vim"
 
-set -g MANPAGER "nvim -c 'set ft=man' -"
+alias .files="git --git-dir=$HOME/.files/ --work-tree=$HOME" # Manage .files
+
+set -gx MANPAGER "nvim -c 'set ft=man' -" # Change man to nvim
 
 # PATH
-set -gx DENO_INSTALL "/home/saurabh/.deno"
+set -gx DENO_INSTALL "$HOME/.deno"
 set -gx PATH "$DENO_INSTALL/bin:$PATH"
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
-
 
 starship init fish | source
 
