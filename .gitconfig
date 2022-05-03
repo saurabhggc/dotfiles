@@ -8,3 +8,4 @@
 	autocrlf = input
 [alias]
 	st = status -s
+	lg = log --oneline
