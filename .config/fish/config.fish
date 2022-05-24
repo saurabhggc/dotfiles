@@ -1,4 +1,5 @@
 set fish_greeting
+set -gx DOTFILES_PATH "$HOME/dotfiles"
 
 # Change exa to ls
 alias ls="exa --color=always --group-directories-first"
@@ -12,9 +13,9 @@ alias dev="cd $HOME/Documents/Code"
 alias efsh="nvim $HOME/.config/fish/config.fish"
 alias evim="nvim $HOME/.config/nvim/init.vim"
 
-alias .files="git --git-dir=$HOME/.files/ --work-tree=$HOME" # Manage .files
+alias dotfiles="git --git-dir=$DOTFILES_PATH --work-tree=$HOME"
 
-set -gx MANPAGER "nvim -c 'set ft=man' -" # Change man to nvim
+set -gx MANPAGER "nvim -c 'set ft=man' -"
 
 # PATH
 set -gx DENO_INSTALL "$HOME/.deno"
